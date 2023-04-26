@@ -87,7 +87,7 @@ public class MainScreenListener  implements OnClickListener, OnCheckedChangeList
         int resId = InputTenKey.NO_INFORMATION_MESSAGE;
         
         // 支払い金額を入力する場合...
-        if (buttonId == R.id.totalPaymentData)
+        if (buttonId == R.id.total_payment_data)
         {
             resId = R.string.payment_Message;
             return (resId);
@@ -163,7 +163,7 @@ public class MainScreenListener  implements OnClickListener, OnCheckedChangeList
             }
 
             // 支払い金額 or 人数を入力する場合...
-            if ((buttonId == R.id.totalPaymentData)||
+            if ((buttonId == R.id.total_payment_data)||
                 (buttonId == R.id.numberOfGentlemen)||
                 (buttonId == R.id.numberOfMen)||
                 (buttonId == R.id.numberOfWomen)||

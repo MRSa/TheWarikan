@@ -30,7 +30,7 @@ public class TheWarikan extends Activity
         //  (Qtでいうところの、Signal-Slot 接続みたいなものかな...)
         listener = new MainScreenListener(this, updater);
 
-        final TextView totalPayment = findViewById(R.id.totalPaymentData);
+        final TextView totalPayment = findViewById(R.id.total_payment_data);
         totalPayment.setOnClickListener(listener);
 
         final TextView gentlemen = findViewById(R.id.numberOfGentlemen);

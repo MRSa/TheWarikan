@@ -48,43 +48,42 @@ public class MainScreenUpdater
             Log.v(TAG,"" + data.getAction());
             return;
         }
-
+        Log.v(TAG, " onActivityResult() ;;;");
         boolean needCalculate = false;
         String stringData = "";
-        switch (requestCode)
+        if (requestCode == R.id.total_payment_data)
         {
-          case R.id.totalPaymentData:
             // 支払い総額の変更処理
             needCalculate = setPaymentValue(resultCode);
-            break;
-
-          case R.id.chkAddCharge:
+        }
+        else if (requestCode == R.id.chkAddCharge)
+        {
             // チップ加算をした支払い総額の変更処理
             updateTotalValueWithServiceCharge(resultCode);
             showTotalPaymentData();
             needCalculate = true;
-            break;
-              
-          case R.id.numberOfGentlemen:
-          case R.id.numberOfMen:
-          case R.id.numberOfWomen:
+        }
+        else if ((requestCode == R.id.numberOfGentlemen)||
+                (requestCode == R.id.numberOfMen)||
+                (requestCode == R.id.numberOfWomen))
+        {
             // 値を設定する
             stringData = stringData + resultCode;
             setValueToTextView(requestCode, stringData);
             needCalculate = true;
-            break;
-            
-          case R.id.GentlemenMoney:
-          case R.id.MenMoney:
-          case R.id.WomenMoney:
+        }
+        else  if ((requestCode == R.id.GentlemenMoney)||
+                (requestCode == R.id.MenMoney)||
+                (requestCode == R.id.WomenMoney))
+        {
             // 支払額が補正された場合...
             modifyPayment(requestCode, resultCode);
-            needCalculate = false;
-            break;
+            // needCalculate = false;
+        }
+        else
+        {
+            Log.v(TAG, "--------- UNKNOWN " + resultCode);
 
-          default:
-            // do nothing!
-            break;
         }
         if (needCalculate)
         {
@@ -155,7 +154,7 @@ public class MainScreenUpdater
             setValueToTextView(R.id.serviceCharge, data);
 
             // 支払い総額を更新する (チップ加算をはずす)
-            totalValue = getIntValueFromTextView(R.id.totalPaymentData);
+            totalValue = getIntValueFromTextView(R.id.total_payment_data);
             if (totalValue < 0)
             {
                 totalValue = 0;
@@ -183,7 +182,7 @@ public class MainScreenUpdater
         {
             //  設定された値を「支払金額」欄に表示する
             String data = "" + value;
-            setValueToTextView(R.id.totalPaymentData, data);
+            setValueToTextView(R.id.total_payment_data, data);
             
             // 支払い総額を設定する
             totalValue = value;
@@ -229,7 +228,7 @@ public class MainScreenUpdater
             // チップの割合を計算し、支払い総額を求める。
             String   unit = parent.getString(R.string.Yen);
             outputData = value + " %  ";
-            int payment = getIntValueFromTextView(R.id.totalPaymentData);
+            int payment = getIntValueFromTextView(R.id.total_payment_data);
             if (payment < 0)
             {
                 totalValue = 0;
