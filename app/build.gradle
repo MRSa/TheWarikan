@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 33
@@ -11,7 +10,6 @@ android {
         versionCode 6
         versionName "1.0.6"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -19,13 +17,8 @@ android {
         }
     }
     compileOptions {
-        //sourceCompatibility JavaVersion.VERSION_1_8
-        //targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
     namespace 'jp.sourceforge.gokigen.warikan'
-}
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

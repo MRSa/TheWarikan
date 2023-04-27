@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/total_payment_label"
         android:text="@string/totalPayment"
-        android:textSize="11pt"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#0a0a0a"
         android:layout_alignParentLeft="true"
@@ -61,11 +61,12 @@
     <!-- サービス料加算 -->
     <CheckBox android:id="@+id/chkAddCharge"
         android:text="@string/check_Charge"
-        android:textSize="9pt"
+        android:textSize="24sp"
         android:textColor="#0a0a0a"
         android:layout_below="@id/total_payment_data"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:padding="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_width="wrap_content"
@@ -101,7 +102,7 @@
         android:layout_marginRight="4dp"
         android:layout_marginEnd="4dp"
         android:src="@drawable/gentlemens"
-    />
+        android:contentDescription="@string/spacer" />
     <ImageView
         android:id="@+id/gentlemenTimes"
         android:scaleType="centerInside"
@@ -112,6 +113,7 @@
         android:layout_width="12dp"
         android:layout_height="34dp"
         android:src="@drawable/times"
+        android:contentDescription="@string/spacer"
     />
     <TextView
         android:id="@+id/numberOfGentlemen"
@@ -179,6 +181,7 @@
         android:layout_marginRight="4dp"
         android:layout_marginEnd="4dp"
         android:src="@drawable/mens"
+        android:contentDescription="@string/spacer"
     />
     <ImageView
         android:id="@+id/menTimes"
@@ -190,6 +193,7 @@
         android:layout_width="12dp"
         android:layout_height="34dp"
         android:src="@drawable/times"
+        android:contentDescription="@string/spacer"
     />
     <TextView
         android:id="@+id/numberOfMen"
@@ -257,6 +261,7 @@
         android:layout_marginRight="4dp"
         android:layout_marginEnd="4dp"
         android:src="@drawable/womens"
+        android:contentDescription="@string/spacer"
     />
     <ImageView
         android:id="@+id/womenTimes"
@@ -269,6 +274,7 @@
         android:layout_height="34dp"
         android:layout_marginBottom="4dp"
         android:src="@drawable/times"
+        android:contentDescription="@string/spacer"
     />
     <TextView
         android:id="@+id/numberOfWomen"
@@ -333,13 +339,14 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:textSize="9pt"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#0a0a0a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="6dp"
         android:layout_marginEnd="6dp"
+        android:padding="4dp"
     />
     <TextView
         android:id="@+id/totalAmountValue"
@@ -350,7 +357,8 @@
         android:layout_toEndOf="@id/totalAmountLabel"
         android:layout_alignBottom="@id/totalAmountLabel"
         android:textStyle="bold"
-        android:textSize="9pt"
+        android:textSize="24sp"
+        android:padding="4dp"
         android:textColor="#0a0a0a"
     />
     <TextView
@@ -363,7 +371,8 @@
         android:layout_alignBottom="@id/totalAmountLabel"
         android:layout_marginRight="6dp"
         android:layout_marginEnd="6dp"
-        android:textSize="9pt"
+        android:textSize="24sp"
+        android:padding="4dp"
         android:textColor="#0a0a0a"
     />
     <TextView
@@ -374,7 +383,8 @@
         android:layout_toRightOf="@id/totalAmountUnit"
         android:layout_toEndOf="@id/totalAmountUnit"
         android:layout_alignBottom="@id/totalAmountLabel"
-        android:textSize="9pt"
+        android:padding="4dp"
+        android:textSize="20sp"
         android:textColor="#0a0a0a"
     />
 </RelativeLayout>

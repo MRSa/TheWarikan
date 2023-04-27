@@ -15,8 +15,8 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
  */
 public class MainScreenListener  implements OnClickListener, OnCheckedChangeListener
 {
-    private Activity parent;            // 親分
-    private MainScreenUpdater updater;  // 子分
+    private final Activity parent;            // 親分
+    private final MainScreenUpdater updater;  // 子分
 
     /**
      *  コンストラクタ
@@ -173,13 +173,13 @@ public class MainScreenListener  implements OnClickListener, OnCheckedChangeList
             {
                 // 現在設定されている値を取り出して初期値にする
                 TextView area = parent.findViewById(buttonId);
-                value = Integer.valueOf(area.getText().toString());
+                value = Integer.parseInt(area.getText().toString());
                 return (value);
             }
         }
         catch (Exception ex)
         {
-            value = 0;
+            ex.printStackTrace();
         }
         return (value);
     }

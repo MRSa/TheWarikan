@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class MainScreenUpdater
 {
     private final String TAG = toString();
-    private Activity parent;
+    private final Activity parent;
     private int     totalValue = 0;
     
     /**
@@ -94,8 +94,6 @@ public class MainScreenUpdater
 
     /**
      *  チェックボックスがクリアされたときの処理
-     *
-     *
      */
     public void clearedCheckBox(int id)
     {
@@ -133,7 +131,7 @@ public class MainScreenUpdater
         try
         {
              TextView view =parent.findViewById(id);
-            value = Integer.valueOf(view.getText().toString());
+            value = Integer.parseInt(view.getText().toString());
         }
         catch (Exception ex)
         {
@@ -217,8 +215,6 @@ public class MainScreenUpdater
 
     /**
      *  チップを含んだ支払総額を計算し、画面表示を更新する
-     *
-     *
      */
     private void updateTotalValueWithServiceCharge(int value)
     {
@@ -231,7 +227,7 @@ public class MainScreenUpdater
             int payment = getIntValueFromTextView(R.id.total_payment_data);
             if (payment < 0)
             {
-                totalValue = 0;
+                payment = 0;
             }
             totalValue   = payment * value;
             totalValue = totalValue / 100;
@@ -531,8 +527,6 @@ public class MainScreenUpdater
 
     /**
      *  女性の支払額を決定する
-     *
-     *
      */
     private int calculateWomen(int restValue, int nofGentlemen, int nofMen, int nofWomen)
     {
@@ -646,7 +640,7 @@ public class MainScreenUpdater
     private boolean confirmToChangeGentlemenPayment(int number, int current, int change)
     {
         Log.v(TAG, "confirmToChangeGentlemenPayment() " + number + " " + current + " " + change);
-    	return (true);    // 変更を許可する
+        return (true);    // 変更を許可する
     }
 
     /**

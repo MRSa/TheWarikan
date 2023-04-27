@@ -16,7 +16,7 @@ import android.widget.EditText;
 public class TenKeyListener implements OnClickListener, OnKeyListener
 {
     private final String TAG = toString();
-    private Activity parent;
+    private final Activity parent;
     private static final int MAX_INPUT_LENGTH = 7; // 七桁以上のデータは入力できない
 
     /**
@@ -208,7 +208,7 @@ public class TenKeyListener implements OnClickListener, OnKeyListener
                 parent.setResult(0);
                 return;
             }
-            int intValue = Integer.valueOf(value);
+            int intValue = Integer.parseInt(value);
             parent.setResult(intValue);
         }
         catch (Exception e)
@@ -220,8 +220,6 @@ public class TenKeyListener implements OnClickListener, OnKeyListener
 
     /**
      *  テンキーのキー入力
-     *
-     *
      */
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
@@ -246,63 +244,6 @@ public class TenKeyListener implements OnClickListener, OnKeyListener
         	cancelInput();
         	return (true);
         }
-/*
-        else if ((keyCode == KeyEvent.KEYCODE_0))
-        {
-            //  数字キーのゼロを入力
-        	entryValue(0);
-        }
-        else if ((keyCode == KeyEvent.KEYCODE_1))
-        {
-            //  数字キーの1を入力
-        	entryValue(1);
-        }        
-        else if ((keyCode == KeyEvent.KEYCODE_2))
-        {
-            //  数字キーの2を入力
-        	entryValue(2);
-        }
-        else if ((keyCode == KeyEvent.KEYCODE_3))
-        {
-            //  数字キーの3を入力
-        	entryValue(3);
-        }
-        else if ((keyCode == KeyEvent.KEYCODE_4))
-        {
-            //  数字キーの4を入力
-        	entryValue(4);
-        }
-        else if ((keyCode == KeyEvent.KEYCODE_5))
-        {
-            //  数字キーの5を入力
-        	entryValue(5);
-        }
-        else if ((keyCode == KeyEvent.KEYCODE_6))
-        {
-            //  数字キーの6を入力
-        	entryValue(6);
-        }
-        else if ((keyCode == KeyEvent.KEYCODE_7))
-        {
-            //  数字キーの7を入力
-        	entryValue(7);
-        }
-        else if ((keyCode == KeyEvent.KEYCODE_8))
-        {
-            //  数字キーの8を入力
-        	entryValue(8);
-        }
-        else if ((keyCode == KeyEvent.KEYCODE_9))
-        {
-            //  数字キーの9を入力
-        	entryValue(9);
-        }
-        else
-        {
-        	// 上記以外が入力されたとき
-        	ret = false;
-        }
-*/
         return (false);
     }   
 }

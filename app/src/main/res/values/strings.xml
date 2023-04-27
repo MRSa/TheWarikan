@@ -39,4 +39,5 @@
     <string name="label_seven">7</string>
     <string name="label_eight">8</string>
     <string name="label_nine">9</string>
+    <string name="description_numeric_data">入力数字</string>
 </resources>

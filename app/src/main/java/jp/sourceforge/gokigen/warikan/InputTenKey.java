@@ -14,7 +14,7 @@ import android.content.Intent;
  *  テンキー入力画面
  *   startActivityForResult()で呼ばれることを前提とし、入力値をResultで返す。
  *  エラーまたは入力キャンセルの場合には、Activity.RESULT_OK (-1) を応答する。
- *  
+ * <p>
  *  ※ 処理はイベントリスナ側で行うので、このクラスでは大した処理は行わない。
  *  
  * @author MRSa
