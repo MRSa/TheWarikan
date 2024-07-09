@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">わりかん</string>
-    <string name="title">わりかん</string>
+    <string name="app_name">WARIKAN</string>
+    <string name="title">Warikan</string>
     <string name="Yen">円</string>
     <string name="totalAmount">合計</string>
     <string name="spacer">    </string>
