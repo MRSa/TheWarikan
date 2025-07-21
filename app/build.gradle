@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         applicationId "jp.sourceforge.gokigen.warikan"
         minSdkVersion 1
-        targetSdkVersion 35
-        versionCode 8
-        versionName "1.0.8"
+        targetSdkVersion 36
+        versionCode 9
+        versionName "1.0.9"
     }
     buildTypes {
         release {
